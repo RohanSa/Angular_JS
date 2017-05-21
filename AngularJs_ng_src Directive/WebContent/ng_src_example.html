@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/angular.min.js">
+</script>
+<script type="text/javascript" src="js/myApp.js">
+</script>
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="SourceController">
+		<p>cartoon Name : {{cartoon.name}}</p>
+
+		<p>cartoon image :</p>
+		<p>
+			<img alt="{{cartoon.description}}" ng-src="{{ cartoon.path }}"
+				style="height: 100px; width: 100px;">
+		</p>
+
+
+	</div>
+
+</body>
+</html>
