@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/myApp.js">
+	
+</script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="RepeatController">
+		<h2>Simple Table</h2>
+		<table>
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>Name</td>
+				</tr>
+			</thead>
+			<tr ng-repeat="student in students ">
+				<td>{{student.id}}</td>
+				<td>{{student.name}}</td>
+			</tr>
+		</table>
+		<h2>ng-repeat properties</h2>
+		<table border="1">
+			<thead style="font-weight: bold;">
+				<tr>
+					<td>ID</td>
+					<td>Name</td>
+					<td>$index</td>
+					<td>$first</td>
+					<td>$middle</td>
+					<td>$last</td>
+					<td>$odd</td>
+					<td>$even</td>
+				</tr>
+			</thead>
+			<tr ng-repeat="student in students ">
+				<td>{{student.id}}</td>
+				<td>{{student.name}}</td>
+				<td>{{$index}}</td>
+				<td>{{$first}}</td>
+				<td>{{$middle}}</td>
+				<td>{{$last}}</td>
+				<td>{{$odd}}</td>
+				<td>{{$even}}</td>
+
+			</tr>
+		</table>
+
+		<h2>Nested ng-repeat with iterating over object properties</h2>
+		<ul ng-repeat="student in students">
+			<li>{{student}}
+				<ul ng-repeat="(x,y) in student ">
+					<li>{{x}} : {{y}}</li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+</body>
+</html>
