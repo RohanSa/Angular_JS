@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/myApp.js">
+	
+</script>
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="EventController">
+		<h2>ng-click example</h2>
+		<input type="button" value="click me" ng-init="count=0"
+			ng-click="count = count +1"> 
+		{{count}} 
+		
+		<br/>
+		
+		<h2>ng-dblclick example</h2>
+		<input type="button" value="Double click me" ng-init="dcount = 0"
+			ng-dblclick="dcount = dcount +1"> 
+		{{dcount}} 
+		
+		<br/>
+				
+		<h2>ng-blur example</h2>
+		Enter your name<input type="text" ng-model="name" ng-blur="onBlurMethod(name)">
+		{{welcomeName}}
+
+	</div>
+
+
+</body>
+</html>
