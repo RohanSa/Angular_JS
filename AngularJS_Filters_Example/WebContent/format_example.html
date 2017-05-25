@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Angular JS Format Example</title>
+<script type="text/javascript" src="js/angular.min.js">	</script>
+
+<script type="text/javascript" src="js/myApp.js">
+</script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="FilterController">
+		<h2>Format Example</h2>
+
+		<table border="1">
+			<thead style="font-weight: bold;">
+				<tr>
+					<td>name</td>
+					<td>company</td>
+					<td>age</td>
+					<td>salary</td>
+					<td>salary Formatted</td>
+					<td>role</td>
+					<td>Date of Joining</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees | filter : filtertext ">
+					<td>{{employee.name | uppercase}}</td>
+					<td>{{employee.company}}</td>
+					<td>{{employee.age}}</td>
+					<td>{{employee.salary}}</td>
+					<td>{{employee.salary | currency : $ : 1 }}</td>
+					<td>{{employee.role}}</td>
+					<td>{{employee.dateOfJoining | date : 'yyyy-MM-dd h:mm a'}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Angular JS LimitTo Example</title>
+<script type="text/javascript" src="js/angular.min.js">	</script>
+
+<script type="text/javascript" src="js/myApp.js">
+</script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="FilterController">
+		<h2>LimitTo Example</h2>
+
+		Select no of rows to display<input type="number" min="0" max="5" ng-model="limitrows">
+
+		<table border="1">
+			<thead style="font-weight: bold;">
+				<tr>
+					<td>name</td>
+					<td>company</td>
+					<td>age</td>
+					<td>salary</td>
+					<td>salary Formatted</td>
+					<td>role</td>
+					<td>Date of Joining</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees | limitTo : limitrows ">
+					<td>{{employee.name}}</td>
+					<td>{{employee.company}}</td>
+					<td>{{employee.age}}</td>
+					<td>{{employee.salary}}</td>
+					<td>{{employee.salary }}</td>
+					<td>{{employee.role}}</td>
+					<td>{{employee.dateOfJoining }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

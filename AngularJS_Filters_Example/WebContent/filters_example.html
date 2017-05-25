@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Angular JS Filter Example</title>
+<script type="text/javascript" src="js/angular.min.js">	</script>
+
+<script type="text/javascript" src="js/myApp.js">
+</script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="FilterController">
+
+
+
+		<h2>Filter Example</h2>
+		Enter Name To filter result from below Table <input type="text"
+			ng-model="filtertext.name"> <br />
+
+		<h2>Filter Example</h2>
+		Enter value that matches with any columns from below Table To filter
+		result : <input type="text" ng-model="filtertext.$"> <br />
+
+		<table border="1">
+			<thead style="font-weight: bold;">
+				<tr>
+					<td>name</td>
+					<td>company</td>
+					<td>age</td>
+					<td>salary</td>
+					<td>role</td>
+					<td>Date of Joining</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees | filter : filtertext ">
+					<td>{{employee.name}}</td>
+					<td>{{employee.company}}</td>
+					<td>{{employee.age}}</td>
+					<td>{{employee.salary}}</td>
+					<td>{{employee.role}}</td>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

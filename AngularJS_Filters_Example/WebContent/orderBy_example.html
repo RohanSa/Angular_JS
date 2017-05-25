@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Angular JS Order By Example</title>
+<script type="text/javascript" src="js/angular.min.js">	</script>
+
+<script type="text/javascript" src="js/myApp.js">
+</script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="FilterController">
+		<h2>Order By Example</h2>
+
+		<table border="1">
+			<thead style="font-weight: bold;">
+				<tr>
+					<td>name</td>
+					<td>company</td>
+					<td>age</td>
+					<td>salary</td>
+					<td>role</td>
+					<td>Date of Joining</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees | orderBy : 'age' ">
+					<td>{{employee.name}}</td>
+					<td>{{employee.company}}</td>
+					<td>{{employee.age}}</td>
+					<td>{{employee.salary}}</td>
+					<td>{{employee.role}}</td>
+					<td>{{employee.dateOfJoining }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
