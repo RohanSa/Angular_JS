@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/myApp.js"></script>
+<link href="js/appcss.css" rel="stylesheet" type="text/css" />
+
+<title>Sort Table By Column Name Demo</title>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="SortController">
+		<h2>Sort Table By Column Name Example</h2>
+
+		<table border="1">
+			<thead style="font-weight: bold; cursor: pointer;">
+				<tr>
+					<td ng-click="sortTable('name')">name
+						<div ng-class="sortClass('name')"></div>
+					</td>
+					<td ng-click="sortTable('company')">company
+						<div ng-class="sortClass('company')"></div>
+					</td>
+					<td ng-click="sortTable('age')">age
+						<div ng-class="sortClass('age')"></div>
+					</td>
+					<td ng-click="sortTable('salary')">salary
+						<div ng-class="sortClass('salary')"></div>
+					</td>
+					<td ng-click="sortTable('role')">role
+						<div ng-class="sortClass('role')"></div>
+					</td>
+					<td ng-click="sortTable('dateOfJoining')">Date of Joining
+						<div ng-class="sortClass('dateOfJoining')"></div>
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr
+					ng-repeat="employee in employees | orderBy : sortcolumn : reverseSort ">
+					<td>{{employee.name}}</td>
+					<td>{{employee.company}}</td>
+					<td>{{employee.age}}</td>
+					<td>{{employee.salary}}</td>
+					<td>{{employee.role}}</td>
+					<td>{{employee.dateOfJoining }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
