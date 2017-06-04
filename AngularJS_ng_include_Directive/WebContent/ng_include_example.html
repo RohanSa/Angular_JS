@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>ng include example</title>
+<script type="text/javascript" src="js/angular.min.js">
+</script>
+<script type="text/javascript" src="js/myApp.js"></script>
+
+</head>
+<body ng-app="myApp">
+	<div ng-controller="IncludeController">
+
+		Select page to load <select ng-model="defaultpage"
+			ng-options="page for page in pageslist">
+			<option value=""></option>
+		</select>
+
+		<div ng-include="defaultpage"></div>
+
+	</div>
+
+
+</body>
+</html>
