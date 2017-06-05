@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>simple scroll service example</title>
+<script type="text/javascript" src="js/angular.min.js">
+	</script>
+<script type="text/javascript" src="js/myApp.js">
+	</script>
+
+</head>
+<body ng-app="myApp">
+	<div ng-controller="ScrollController">
+		<p id="top" style="height: 800px;">
+			This is top paragraph <input type="button"
+				value="Go to next paragraph" ng-click="goTo('middle')">
+		</p>
+
+		<p id="middle" style="height: 800px;">
+			This is middle paragraph <input type="button"
+				value="Go to last paragraph" ng-click="goTo('bottom')">
+		</p>
+
+
+		<p id="bottom" style="height: 800px;">
+			This is bottom paragraph <input type="button"
+				value="Go to first paragraph" ng-click="goTo('top')">
+		</p>
+
+
+
+	</div>
+</body>
+</html>
