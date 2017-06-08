@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>$catchFactory Service Example</title>
+<script type="text/javascript" src="js/angular.min.js">
+</script>
+<script type="text/javascript" src="js/myApp.js">
+</script>
+</head>
+<body ng-app="myApp">
+	<div ng-controller="CacheController">
+		<h2>CRUD operations on cache</h2>
+		<table border="1">
+			<tr>
+				<td>Employee Id : <input type="text" ng-model="employeeId" /></td>
+				<td>Employee Name: <input type="text" ng-model="employeeName" /></td>
+				<td><input type="button" value="Add entry to cache"
+					ng-click="addTocache(employeeId, employeeName)"></td>
+				<td><input type="button"
+					value="Remove entry by emp Id from cache"
+					ng-click="removeFromcache(employeeId)"></td>
+				<td><input type="button" value="Remove all entries from cahce"
+					ng-click="removeAll()"></td>
+			</tr>
+		</table>
+
+
+		<p ng-if="keys.length">Cached Values</p>
+		<div ng-repeat="key in keys">
+			<span ng-bind="key"></span> <span>: </span> <b
+				ng-bind="cache.get(key)"></b>
+		</div>
+
+		<p>Cache Info</p>
+		<div ng-repeat="(key, value) in cache.info()">
+			<span ng-bind="key"></span> <span>: </span> <b ng-bind="value"></b>
+		</div>
+	</div>
+</body>
+</html>
