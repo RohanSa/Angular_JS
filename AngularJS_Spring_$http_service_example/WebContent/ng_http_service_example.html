@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script type="text/javascript" src="js/angular.min.js">
+	</script>
+<script type="text/javascript" src="js/myApp.js">
+	</script>
+<script type="text/javascript" src="js/controller/EmployeeController.js">
+	</script>
+<script type="text/javascript" src="js/service/EmployeeService.js">
+	</script>
+<title>Angular JS-Spring $http service example</title>
+</head>
+<body ng-app="myApp">
+	<h2>Angular JS-Spring $http service example</h2>
+	<div ng-controller="EmployeeController">
+		<form method="post">
+			<table>
+				<tr>
+					<td>Id</td>
+					<td><input type="number" ng-model="employee.id"></td>
+				</tr>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" ng-model="employee.name"
+						required="required"></td>
+				</tr>
+				<tr>
+					<td>Role</td>
+					<td><input type="text" ng-model="employee.role"
+						required="required"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="submit" value="Add Employee"
+						ng-click="addEmployee()"></td>
+				</tr>
+			</table>
+		</form>
+
+		<br /> <br />
+
+		<table border="1">
+			<thead>
+				<tr>
+					<td>Employee Id</td>
+					<td>Name</td>
+					<td>Role</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees">
+					<td>{{employee.id}}</td>
+					<td>{{employee.name}}</td>
+					<td>{{employee.role}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
