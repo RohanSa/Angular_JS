@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>interpolate service example</title>
+<script type="text/javascript" src="js/angular.min.js">
+</script>
+
+<script type="text/javascript"
+	src="https://code.angularjs.org/1.6.3/angular-sanitize.js"></script>
+
+<script type="text/javascript" src="js/myApp.js">
+</script>
+
+</head>
+<body ng-app="myApp">
+	<div ng-controller="InterpolateController">
+		Simple interpolate example : {{result1}} <br /> allornothing
+		interpolate example : {{result2}}
+
+		<div ng-bind-html="result1"></div>
+	</div>
+</body>
+</html>
