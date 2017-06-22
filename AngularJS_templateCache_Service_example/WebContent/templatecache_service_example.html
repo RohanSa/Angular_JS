@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Template Cache Example</title>
+<script type="text/javascript" src="js/angular.min.js">
+</script>
+<script type="text/javascript" src="js/myApp.js">
+</script>
+
+</head>
+<body ng-app="myApp">
+	<script type="text/ng-template" id="inline.html">
+	<p>message value from controller is : <strong>{{message}}</strong></p>
+	</script>
+	<div ng-controller="TemplatecahceController">
+
+
+		<div ng-include="'startup.html'"></div>
+		
+		<div ng-include="'inline.html'" src=""></div>
+
+	</div>
+</body>
+</html>
