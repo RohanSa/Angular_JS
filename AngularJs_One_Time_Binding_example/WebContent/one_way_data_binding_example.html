@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>one way data binding example</title>
+<script type="text/javascript" src="js/angular.min.js">
+</script>
+<script type="text/javascript" src="js/myApp.js">
+</script>
+</head>
+<body ng-app="myApp">
+
+<div ng-controller="OneWayBindController">
+
+Enter value<input ng-model="msg" type="text"><br/>
+<div style="color: {{::color}}">One way data binding : {{::msg}}</div><br/>
+Two way data binding : {{msg}}<br/>
+
+<input type="button" ng-click="resetValue()" value="Reset msg">
+</div>
+</body>
+</html>
