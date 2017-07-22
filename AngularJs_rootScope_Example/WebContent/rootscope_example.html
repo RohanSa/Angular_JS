@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>rootscope Vs scope example</title>
+<script type="text/javascript" src="js/angular.min.js">
+</script>
+<script type="text/javascript" src="js/myApp.js">
+</script>
+</head>
+<body ng-app="myApp">
+
+	<div ng-controller="RootScopeController">
+	<h2>RootScopeController</h2>
+	Root scope propety value is : {{msg1}}
+	</div>
+
+<br/><br/><br/>
+<h2>ScopeController</h2> 
+	<div ng-controller="ScopeController">
+	scope msg is : {{msg}}<br/>
+	Root scope msg is : {{rootscopemsg}}
+	
+	</div>
+	
+</body>
+</html>
