@@ -9,11 +9,13 @@ angular.module('employeeApp').controller(
 					
 					var self = this;
 					
+					
+					
 					$log.info("In EmployeeController ");
 					 
 					$scope.message ='Test Messgae';
 					
-					$scope.languages = [{"lid":1,"lname":'Java'},{"lid":2,"lname":'C'},{"lid":3,"lname":'C#'},{"lid:":4,"lname":'Python'}];
+					$scope.languages = [{"lid":1,"lname":'Java'},{"lid":2,"lname":'C'},{"lid":3,"lname":'C#'},{"lid":4,"lname":'Python'}];
 					$scope.employee={};
 					$scope.errmsg = '';
 					$scope.successmsg = '';
@@ -93,13 +95,39 @@ angular.module('employeeApp').controller(
 					};
 					
 					
-					$scope.submitForm = function(isValid) {
+					$scope.submitForm = function(isValid,employee) {
 
 						// check to make sure the form is completely valid
 						if (isValid) {
 							alert('Form is valid...');
+							
+							$log.info(employee);
 						}
 
+					};
+					
+					
+					$scope.calculateSomeSelected = function(object) {
+
+						$log.info('In someSelected()');
+						
+						for (var key in object) {
+							  if (object.hasOwnProperty(key)) {
+							    console.log("Key : " + key + " Value : " + object[key]);
+							  }
+							}
+						if(object == undefined)
+							return false;
+						
+					/*	return  Object.keys(object).some(function(key) {
+							return object[key];
+						});*/
+						
+						
+						
+						$scope.someSelected = Object.keys(object).some(function (key) {
+						      return object[key];
+						    });
 					};
 					
 					
