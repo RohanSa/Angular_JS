@@ -12,7 +12,7 @@ public class EmployeeDTO {
 	private List<String> languages;
 	private String email;
 	private double salary;
-	private String panId;
+	private String panid;
 	
 	
 
@@ -30,7 +30,7 @@ public class EmployeeDTO {
 		this.languages = languages;
 		this.email = email;
 		this.salary = salary;
-		this.panId=panId;
+		this.panid=panId;
 	}
 
 
@@ -84,20 +84,23 @@ public class EmployeeDTO {
 	}
 
 
-	public String getPanId() {
-		return panId;
+	
+
+
+	public String getPanid() {
+		return panid;
 	}
 
 
-	public void setPanId(String panId) {
-		this.panId = panId;
+	public void setPanid(String panid) {
+		this.panid = panid;
 	}
 
 
 	@Override
 	public String toString() {
 		return "EmployeeDTO [id=" + id + ", name=" + name + ", gender=" + gender + ", languages=" + languages
-				+ ", email=" + email + ", salary=" + salary + ", panId=" + panId + "]";
+				+ ", email=" + email + ", salary=" + salary + ", panId=" + panid + "]";
 	}
 
 

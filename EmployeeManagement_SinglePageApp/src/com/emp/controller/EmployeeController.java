@@ -1,5 +1,7 @@
 package com.emp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emp.dto.EmployeeDTO;
+import com.emp.dto.LanguageDTO;
 import com.emp.service.*;
 
 @RestController
@@ -21,7 +24,7 @@ public class EmployeeController {
 
 	@PostMapping(value = "addemployee.spring")
 	public ResponseEntity createEmployee(@RequestBody EmployeeDTO employeeDTO) {
-		System.out.println("In createEmployee() ");
+		System.out.println("In createEmployee() " + employeeDTO);
 		if (employeeService.addEmpplyee(employeeDTO))
 			return new ResponseEntity<>(HttpStatus.OK);
 
@@ -58,5 +61,14 @@ public class EmployeeController {
 		}
 		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 	}
+	
+	@GetMapping(value = "getlanguages.spring")
+	public ResponseEntity getLanguages() {
+		System.out.println("In getLanguages()");
+		
+		List<LanguageDTO> languages = employeeService.getLanguages();
+		return new ResponseEntity<>(languages,HttpStatus.OK);
+	}
+
 
 }

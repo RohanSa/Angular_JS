@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.emp.dao.EmployeeDao;
 import com.emp.dto.EmployeeDTO;
+import com.emp.dto.LanguageDTO;
 
 @Service
 public class EmployeeService {
@@ -17,7 +18,7 @@ public class EmployeeService {
 	public boolean addEmpplyee(EmployeeDTO dto) {
 
 		boolean status = Boolean.FALSE;
-		if ((employeeDao.getbyId(dto.getId())) != null) {
+		if ((employeeDao.getbyId(dto.getId())) == null) {
 			status = employeeDao.add(dto);
 
 		}
@@ -51,6 +52,10 @@ public class EmployeeService {
 
 		return status;
 
+	}
+
+	public List<LanguageDTO> getLanguages() {
+		return employeeDao.getLanguages();
 	}
 
 }
