@@ -1,3 +1,41 @@
-<div >
-<h1>Mesaage from controller : {{message}}</h1>
+<div>
+	<h1>View Employees</h1>
+	<div>
+		<input type="button" ng-click="getAllEmployees()"
+			value="Get All Employees">
+	</div>
+	
+	<div>
+	<form class="form-inline">
+		<div class="form-group">
+			<label>Search</label> <input type="text" ng-model="search"
+				class="form-control" placeholder="Search">
+		</div>
+	</form>
+	</div>
+	<div>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Gender</th>
+					<th>Email</th>
+					<th>Salary</th>
+					<th>Pan Id</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="employee in employees | filter : search">
+					<td>{{employee.id}}</td>
+					<td>{{employee.name}}</td>
+					<td>{{employee.gender}}</td>
+					<td>{{employee.email}}</td>
+					<td>{{employee.salary}}</td>
+					<td>{{employee.panid}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
 </div>

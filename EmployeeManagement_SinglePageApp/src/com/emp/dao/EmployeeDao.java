@@ -26,9 +26,9 @@ public class EmployeeDao {
 
 		empStorage.put(1, new EmployeeDTO(1, "David", "Male", new ArrayList<>(Arrays.asList("java", "C#")),
 				"david@gmail.com", 25000, "D123"));
-		empStorage.put(2, new EmployeeDTO(1, "Kim", "Female", new ArrayList<>(Arrays.asList("java", "python")),
+		empStorage.put(2, new EmployeeDTO(2, "Kim", "Female", new ArrayList<>(Arrays.asList("java", "python")),
 				"kim@gmail.com", 35000, "K123"));
-		empStorage.put(3, new EmployeeDTO(1, "Chris", "Male", new ArrayList<>(Arrays.asList("C")), "chris@ymail.com",
+		empStorage.put(3, new EmployeeDTO(3, "Chris", "Male", new ArrayList<>(Arrays.asList("C")), "chris@ymail.com",
 				55000, "C123"));
 		
 		languages.put(1, new LanguageDTO(1, "Java"));

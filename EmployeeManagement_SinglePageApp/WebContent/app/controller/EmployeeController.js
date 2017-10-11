@@ -26,8 +26,9 @@ angular
 							$scope.successmsg = '';
 
 							$scope.getAllEmployees = function() {
+								$log.info("In getAllEmployees()");
 								EmployeeService
-										.getEmployees()
+										.getAllEmployees()
 										.then(
 												function(response) {
 													$log
@@ -48,9 +49,9 @@ angular
 												});
 							};
 
-							$scope.getAllEmployees = function() {
+							$scope.getEmployee = function(id) {
 								EmployeeService
-										.getEmployees()
+										.getEmployee(id)
 										.then(
 												function(response) {
 													$log
