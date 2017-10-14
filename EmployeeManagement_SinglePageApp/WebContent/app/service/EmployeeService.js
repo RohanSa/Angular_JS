@@ -16,7 +16,9 @@ angular.module('employeeApp').factory('EmployeeService',
 
 			function getEmployee(formdata) {
 
-				return $http.get('emp/getemployee.spring', formdata);
+				return $http.get('emp/getemployee.spring', {params : formdata });
+				
+				//return $http.get('emp/getemployee.spring');
 			}
 			;
 

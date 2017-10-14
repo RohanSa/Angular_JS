@@ -2,7 +2,7 @@
  * 
  */
 
-var myApp = angular.module("employeeApp", [ "ngRoute"]).config(
+var myApp = angular.module("employeeApp", [ "ngRoute","angularUtils.directives.dirPagination"]).config(
 		function($routeProvider) {
 
 			$routeProvider.when("/addEmployee", {

@@ -22,6 +22,7 @@ angular
 							$scope.languages = [];
 							$scope.languagesSelected = [];
 							$scope.employee = {};
+							$scope.employees = [];
 							$scope.errmsg = '';
 							$scope.successmsg = '';
 
@@ -50,25 +51,29 @@ angular
 							};
 
 							$scope.getEmployee = function(id) {
+								$log.info('Form data '+ id);
+							
 								EmployeeService
 										.getEmployee(id)
 										.then(
 												function(response) {
 													$log
-															.info('Success: EmployeeController.getAllEmployees()'
+															.info('Success: EmployeeController.getEmployee()'
 																	+ response);
 													$log
-															.info('Success: EmployeeController.getAllEmployees()'
+															.info('Success: EmployeeController.getEmployee()'
 																	+ response.data);
-													$scope.employees = response.data;
+													$scope.employees.length = 0;
+													$scope.employees.push(response.data);
 
 												},
 												function(response) {
 													$log
-															.info('Failure: EmployeeController.getAllEmployees()'
+															.info('Failure: EmployeeController.getEmployee()'
 																	+ response);
 													$scope.errmsg = response.data;
-
+													$scope.employees.length = 0;
+													$window.alert('Employee id not found');	
 												});
 							};
 

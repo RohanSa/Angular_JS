@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emp.dto.EmployeeDTO;
@@ -42,8 +43,9 @@ public class EmployeeController {
 	}
 
 	@GetMapping(value = "getemployee.spring")
-	public ResponseEntity<EmployeeDTO> getEmployee(@RequestBody int id) {
-		System.out.println("In getEmployee()");
+	public ResponseEntity<EmployeeDTO> getEmployee(@RequestParam("id") int id) {
+		
+		System.out.println("In getEmployee()" + " and Id is : "+ id);
 		if (employeeService.getEmployee(id) != null) {
 			EmployeeDTO employeeDTO = employeeService.getEmployee(id);
 
