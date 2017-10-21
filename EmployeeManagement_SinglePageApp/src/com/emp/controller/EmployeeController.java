@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,10 +34,10 @@ public class EmployeeController {
 	}
 
 	@PostMapping(value = "removeemployee.spring")
-	public ResponseEntity removeEmployee(@RequestBody int id) {
+	public ResponseEntity removeEmployee(@RequestBody ModelMap map) {
 
-		System.out.println("In removeEmployee()");
-		if (employeeService.deleteEmpplyee(id))
+		System.out.println("In removeEmployee() and id to delete is : "+map.get("id"));
+		if (employeeService.deleteEmpplyee((Integer)(map.get("id"))))
 			return new ResponseEntity<>(HttpStatus.OK);
 
 		return new ResponseEntity<>(HttpStatus.BAD_REQUEST);

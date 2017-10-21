@@ -1,11 +1,13 @@
 <div>
 	<h1>View Employees</h1>
-	
+
 	<div>
-		<input type="text" ng-model="employee.id"><input type="button" ng-click="getEmployee(employee)"
-			value="Get Employee By Id">
+		<input type="number" min="1" ng-model="employee.id" ng-rquired="required">
+		<input type="button" ng-click="getEmployee(employee)" 	value="Get Employee By Id"> 
+		<span style="color: red;" ng-show="employee.id.$error.required">Employee is is required.</span> 
+		<span style="color: red;" ng-show="employee.id.$error.number"> Not a valid number!</span>
 	</div>
-	
+
 	<div>
 		<input type="button" ng-click="getAllEmployees()"
 			value="Get All Employees">
@@ -42,6 +44,7 @@
 					<th ng-click="sort('panid')">Pan Id <span
 						class="glyphicon sort-icon" ng-show="sortKey=='panid'"
 						ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span></th>
+					<th>Action</th>	
 				</tr>
 			</thead>
 			<tbody>
@@ -53,6 +56,7 @@
 					<td>{{employee.email}}</td>
 					<td>{{employee.salary}}</td>
 					<td>{{employee.panid}}</td>
+					<td><input type="button" ng-click="removeEmployee(employee)" value="delete"></td>
 				</tr>
 			</tbody>
 		</table>

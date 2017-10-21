@@ -117,26 +117,29 @@ angular
 
 								// $log.info($scope.employee);
 
-								$log.info(angular.toJson($scope.employee));
+								$log.info(angular.toJson(employee));
 
-								var emp = angular.toJson($scope.employee);
-
+								var emp = angular.toJson({id: employee.id});
+								
+								
+								$log.info('JSON FORM : '+emp);
+								
 								EmployeeService
 										.deleteEmployee(emp)
 										.then(
 												function(response) {
 													$log
-															.info('Success: EmployeeController.addEmployee()'
+															.info('Success: EmployeeController.removeEmployee()'
 																	+ response);
 													$log
-															.info('Success: EmployeeController.addEmployee()'
+															.info('Success: EmployeeController.removeEmployee()'
 																	+ response.data);
 													$scope.getAllEmployees();
 
 												},
 												function(response) {
 													$log
-															.info('Failure: EmployeeController.addEmployee()'
+															.info('Failure: EmployeeController.removeEmployee()'
 																	+ response);
 													$scope.errmsg = response.data;
 													$log.info(emp);
